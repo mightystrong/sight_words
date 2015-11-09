@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get 'points/:word_id/correct_answer' => 'points#correct_answer', as: :correct_answer
   get 'points/:word_id/wrong_answer' => 'points#wrong_answer', as: :wrong_answer
 
+  get 'games/list_one' => 'games#list_one', as: :list_one
+  get 'games/list_two' => 'games#list_two', as: :list_two
+  get 'games/list_three' => 'games#list_three', as: :list_three
+
   resources :words
   # resources :points do
   # end

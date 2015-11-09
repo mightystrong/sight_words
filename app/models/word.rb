@@ -25,8 +25,9 @@ class Word
     self.points.where(value: 0).count
   end
 
-  def self.remaining
-    words = Word.all
-    words.reject { |x| x.right >= 5 }
+  def self.list_remaining(list)
+    Word.where(:name.in => list) do |word|
+      word.points.right <= 5
+    end
   end
 end

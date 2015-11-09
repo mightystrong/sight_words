@@ -6,7 +6,7 @@ class PointsController < ApplicationController
       @point = Point.new(value: 1, word_id: @word.id)
       if @point.save
         flash[:notice] = "Awesome job. You are correct!!"
-        redirect_to root_path
+        redirect_to :back
       else
         flash.now[:error] = "There was an error adding points. Please try again."
         redirect_to root_path
@@ -23,7 +23,7 @@ class PointsController < ApplicationController
       @point = Point.new(value: 0, word: @word.id)
       if @point.save
         flash[:error] = "Sorry Layla. But the answer is wrong. Please try another word."
-        redirect_to root_path
+        redirect_to :back
       else
         flash.now[:error] = "There was an error adding points. Please try again."
         redirect_to root_path
