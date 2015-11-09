@@ -22,7 +22,7 @@ class Point
   end
 
   def self.todays_points
-    points = self.where(:created_at.gt => Time.now.beginning_of_day).pluck(:value)
+    points = self.where(:created_at.gt => Time.zone.now.beginning_of_day).pluck(:value)
     sum = 0
     points.each do |v|
       sum += v
