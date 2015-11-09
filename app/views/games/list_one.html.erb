@@ -8,5 +8,6 @@
   <% else %>
     <%= render 'points', todays_points: @todays_points, total_points: @total_points %>
     <%= render 'word', word: @word %>
+    <p class="text-center"><%= LIST_ONE.join(", ") %></p>
   <% end %>
 </div>
