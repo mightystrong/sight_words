@@ -1,0 +1,11 @@
+<div class="small-12 medium-6 columns">
+  <h1 class="text-center">
+    Hi Layla!<br><br>
+    What sight word is this?<br><br>
+    <%= word.name %>
+  </h1>
+  <div class="text-center">
+    <%= link_to "Correct", "/points/#{word.id}/correct_answer/" , class: 'button success' %>
+    <%= link_to "Incorrect", "/points/#{word.id}/wrong_answer/", class: 'button alert' %>
+  </div>
+</div>
