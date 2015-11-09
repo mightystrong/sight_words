@@ -1,0 +1,18 @@
+<% if flash[:notice] %>
+  <div data-alert class="alert-box success text-center">
+    <%= flash[:notice] %>
+    <%= link_to "X", '#', class: 'close' %>
+  </div>
+<% elsif flash[:error] %>
+  <div data-alert class="alert-box alert text-center">
+    <%= flash[:error] %>
+    <%= link_to "X", '#', class: 'close' %>
+  </div>
+<% elsif flash[:alert] %>
+  <section class="alert">
+    <div data-alert class="alert-box warning text-center">
+      <h3><%= flash[:alert] %></h3>
+      <%= link_to "X", '#', class: 'close' %>
+    </div>
+  </section>
+<% end %>

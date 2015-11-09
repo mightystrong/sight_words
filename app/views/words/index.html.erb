@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="small-12 columns">
+    <h1 class="text-center">All Words</h1>
+    <table id="words_table" class="display">
+      <thead>
+        <tr>
+          <th>Word</th>
+          <th>Correct</th>
+          <th>Incorrect</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @words.each do |word| %>
+        <tr>
+          <td><%= link_to word.name, word_path(word) %></td>
+          <td><%= word.right %></td>
+          <td><%= word.wrong %></td>
+          <td><%= link_to "edit", edit_word_path(word) %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="small-12 columns">
+    <h1 class="text-center">Add New Word</h1>
+      <div>
+      <%= form_for @word do |f| %>
+        <% if @word.errors.any? %>
+          <div id="error_explanation">
+            <h2>The following prevented your Word from being saved:</h2>
+            <ul>
+              <% @word.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="row">
+          <div class="medium-12 columns">
+            <div class="field">
+              <%= f.label :name, class: "hide" %>
+              <%= f.text_area :name, placeholder: "Add word here", value: "#{@word.name}" %>
+            </div>
+          </div>
+        </div>
+        <div class="actions text-center">
+          <%= f.submit 'Create', class: 'button radius large' %>
+          <%= link_to "Cancel", root_path, id: "cancel", class: 'button radius large alert' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

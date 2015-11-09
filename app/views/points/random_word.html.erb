@@ -1,0 +1,8 @@
+<div class="row full-width">
+  <% if @todays_points == 10 %>
+    <%= render 'success', total_points: @total_points %>
+  <% else %>
+    <%= render 'points', todays_points: @todays_points, total_points: @total_points %>
+    <%= render 'word', word: @word %>
+  <% end %>
+</div>
