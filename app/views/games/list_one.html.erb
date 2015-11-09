@@ -1,6 +1,9 @@
 <div class="row full-width">
   <div class="small-12 columns">
-    <h1 class="text-center">Hi Layla! List One</h1>
+    <div class="text-center">
+      <h1>Hi Layla! List One</h1>
+      <h3 class="subheader"><%= LIST_ONE.join(", ") %></h3>
+    </div>
   </div>
   <hr>
   <% if @todays_points == 10 %>
@@ -8,6 +11,5 @@
   <% else %>
     <%= render 'points', todays_points: @todays_points, total_points: @total_points %>
     <%= render 'word', word: @word %>
-    <p class="text-center"><%= LIST_ONE.join(", ") %></p>
   <% end %>
 </div>

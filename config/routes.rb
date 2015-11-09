@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "games#random_word"
+  root 'pages#home'
 
   get 'points/:word_id/correct_answer' => 'points#correct_answer', as: :correct_answer
   get 'points/:word_id/wrong_answer' => 'points#wrong_answer', as: :wrong_answer
@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'games/list_one' => 'games#list_one', as: :list_one
   get 'games/list_two' => 'games#list_two', as: :list_two
   get 'games/list_three' => 'games#list_three', as: :list_three
+  get 'games/random_words' => 'games#random_words', as: :random_words
 
   resources :words
   # resources :points do

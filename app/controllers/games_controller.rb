@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
 
-  def random_word
+  def random_words
     @word = Word.list_remaining(SIGHT_WORDS).sample
     @total_points = Point.total_points
     @todays_points = Point.todays_points
