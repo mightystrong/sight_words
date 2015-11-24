@@ -76,7 +76,7 @@ class Word
     end
   end
 
-  def difficulty(scale)
+  def difficulty(scale=[1.0, 10.0])
     scale(scale).call(wrong)
   end
 
@@ -84,9 +84,9 @@ class Word
     words = []
     where(:name.in => list).each do |w|
       if direction == "higher"
-        words << w if w.difficulty([1.0, 10.0]) >= score.to_f
+        words << w if w.difficulty >= score.to_f
       else
-        words << w if w.difficulty([1.0, 10.0]) <= score.to_f
+        words << w if w.difficulty <= score.to_f
       end
     end
     words

@@ -5,7 +5,12 @@
   </h1>
   <hr>
   <div class="text-center">
-    <%= link_to "Correct", "/points/#{word.id}/correct_answer/" , class: 'button success' %>
-    <%= link_to "Incorrect", "/points/#{word.id}/wrong_answer/", class: 'button alert' %>
+    <p>
+      <%= link_to "Correct", "/points/#{word.id}/correct_answer/" , class: 'button success' %>
+      <%= link_to "Incorrect", "/points/#{word.id}/wrong_answer/", class: 'button alert' %>
+    </p>
+  </div>
+  <div class="text-center">
+    <p class="subheader">Difficulty: <%= word.difficulty.round(2) %></p>
   </div>
 </div>
