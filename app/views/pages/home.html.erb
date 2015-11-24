@@ -6,10 +6,14 @@
       <hr>
       <p class="panel">
         Which game would you like to play?<br><br>
-        <%= link_to "List One", list_one_path %><br>
-        <%= link_to "List Two", list_two_path %><br>
-        <%= link_to "List Three", list_three_path %><br>
+        <%= link_to "List One", list_path(:list_one), data: { no_turbolink: true } %> |
+        <%= link_to "Hard", hard_words_path(:list_one), data: { no_turbolink: true } %><br>
+        <%= link_to "List Two", list_path(:list_two), data: { no_turbolink: true } %> |
+        <%= link_to "Hard", hard_words_path(:list_two), data: { no_turbolink: true } %><br>
+        <%= link_to "List Three", list_path(:list_three), data: { no_turbolink: true } %> |
+        <%= link_to "Hard", hard_words_path(:list_three), data: { no_turbolink: true } %><br>
         <%= link_to "Random Words", random_words_path %>
+
       </p>
     </div>
   </div>

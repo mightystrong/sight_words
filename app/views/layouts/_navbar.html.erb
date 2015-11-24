@@ -14,9 +14,9 @@
       <li class="has-dropdown">
         <%= link_to "Games", root_path, data: { no_turbolink: true } %>
         <ul class="dropdown">
-          <li><%= link_to "List One", list_one_path, data: { no_turbolink: true } %></li>
-          <li><%= link_to "List Two", list_two_path, data: { no_turbolink: true } %></li>
-          <li><%= link_to "List Three", list_three_path, data: { no_turbolink: true } %></li>
+          <li><%= link_to "List One", list_path(:list_one), data: { no_turbolink: true } %></li>
+          <li><%= link_to "List Two", list_path(:list_two), data: { no_turbolink: true } %></li>
+          <li><%= link_to "List Three", list_path(:list_three), data: { no_turbolink: true } %></li>
           <li><%= link_to "Random Words", random_words_path, data: { no_turbolink: true } %></li>
         </ul>
       </li>

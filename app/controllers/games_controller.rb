@@ -1,27 +1,25 @@
 class GamesController < ApplicationController
+  before_action :set_points
 
   def random_words
-    @word = Word.list_remaining(SIGHT_WORDS).sample
-    @total_points = Point.total_points
-    @todays_points = Point.todays_points
+    @word = Word.difficulty_set(SIGHT_WORDS, 1, "higher").sample
   end
 
-  # For
-  def list_one
-    @word = Word.list_remaining(LIST_ONE).sample
-    @total_points = Point.total_points
-    @todays_points = Point.todays_points
+  def list
+    @list_name = params[:list].to_s.upcase
+    @list = Kernel.const_get @list_name
+    @word = Word.difficulty_set(@list, 6, "lower").sample
   end
 
-  def list_two
-    @word = Word.list_remaining(LIST_TWO).sample
-    @total_points = Point.total_points
-    @todays_points = Point.todays_points
+  def hard_words
+    @list_name = params[:list].to_s.upcase
+    @list = Kernel.const_get @list_name
+    @word = Word.difficulty_set(@list, 4).sample
   end
 
-  def list_three
-    @word = Word.list_remaining(LIST_THREE).sample
-    @total_points = Point.total_points
-    @todays_points = Point.todays_points
-  end
+  private
+    def set_points
+      @total_points = Point.total_points
+      @todays_points = Point.todays_points
+    end
 end
