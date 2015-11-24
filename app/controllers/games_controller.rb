@@ -8,13 +8,15 @@ class GamesController < ApplicationController
   def list
     @list_name = params[:list].to_s.upcase
     @list = Kernel.const_get @list_name
-    @word = Word.difficulty_set(@list, 6, "lower").sample
+    @words = Word.difficulty_set(@list, 6, "lower")
+    @word = @words.sample
   end
 
   def hard_words
     @list_name = params[:list].to_s.upcase
     @list = Kernel.const_get @list_name
-    @word = Word.difficulty_set(@list, 4).sample
+    @words = Word.difficulty_set(@list, 4)
+    @word = @words.sample
   end
 
   private

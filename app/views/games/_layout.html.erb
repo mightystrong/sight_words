@@ -16,8 +16,22 @@
     <% if todays_points == 10 %>
       <%= render 'success', total_points: total_points %>
     <% else %>
-      <%= render 'points', todays_points: todays_points, total_points: total_points %>
-      <%= render 'word', word: word %>
+      <div class="row">
+        <%= render 'points', todays_points: todays_points, total_points: total_points %>
+        <%= render 'word', word: word %>
+      </div>
+      <div class="row">
+        <div class="small-12 columns text-center">
+          <h4><%= words.count %> Remaining Words</h4>
+          <p class="panel">
+            <% names = [] %>
+            <% words.each do |w| %>
+              <% names << w.name %>
+            <% end %>
+            <%= names.join(", ") %>
+          </p>
+        </div>
+      </div>
     <% end %>
   <% else %>
     <p class="panel text-center">
