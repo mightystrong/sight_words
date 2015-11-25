@@ -14,7 +14,7 @@ class Word
   has_many :points, dependent: :restrict
 
   def downcase_name
-    self.name = self.name.downcase
+    self.name = self.name.downcase unless self.name == "I"
   end
 
   def right
