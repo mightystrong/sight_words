@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   get 'games/random_words' => 'games#random_words', as: :random_words
 
   get 'games/:list' => 'games#list', as: :list
-
   get 'games/:list/hard_words/' => 'games#hard_words', as: :hard_words
+  get 'games/:list/practice/' => 'games#practice', as: :practice
 
   resources :words
   # resources :points do

@@ -6,8 +6,8 @@
   <hr>
   <div class="text-center">
     <p>
-      <%= link_to "Correct", "/points/#{word.id}/correct_answer/" , class: 'button success' %>
-      <%= link_to "Incorrect", "/points/#{word.id}/wrong_answer/", class: 'button alert' %>
+      <%= link_to "Correct", correct_answer_path(word.id) , class: 'button success' %>
+      <%= link_to "Incorrect", wrong_answer_path(word.id), class: 'button alert' %>
     </p>
   </div>
   <div class="text-center">

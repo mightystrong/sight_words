@@ -19,6 +19,13 @@ class GamesController < ApplicationController
     @word = @words.sample
   end
 
+  def practice
+    @list_name = params[:list].to_s.upcase
+    @list = Kernel.const_get @list_name
+    @words = Word.difficulty_set(@list, 6, "lower")
+    @word = @words.sample
+  end
+
   private
     def set_points
       @total_points = Point.total_points

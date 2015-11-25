@@ -1,0 +1,38 @@
+<div class="row full-width">
+  <div class="small-12 columns">
+    <div class="text-center">
+      <h1>Hi Layla! <%= @list_name.downcase.split("_").map { |x| x.capitalize }.join(" ") %></h1>
+      <h3 class="subheader"><%= @list.join(", ") %></h3>
+      <p>
+        <%= link_to "Normal Words", list_path(@list_name.downcase.to_s),
+            data: { no_turbolink: true } %> |
+        <%= link_to "Hard Words", hard_words_path(@list_name.downcase.to_s),
+            data: { no_turbolink: true } %>
+      </p>
+    </div>
+  </div>
+  <hr>
+  <% if @word %>
+    <div class="row">
+      <%= render 'points', todays_points: @todays_points, total_points: @total_points %>
+      <%= render 'word', word: @word %>
+    </div>
+    <div class="row">
+      <div class="small-12 columns text-center">
+        <h4><%= @words.count %> Remaining Words</h4>
+        <p class="panel">
+          <% names = [] %>
+          <% @words.each do |w| %>
+            <% names << w.name %>
+          <% end %>
+          <%= names.join(", ") %>
+        </p>
+      </div>
+    </div>
+  <% else %>
+    <p class="panel text-center">
+      There are currently no words left to practice for
+      <%= @list_name.downcase.split("_").join(" ") %>.
+    </p>
+  <% end %>
+</div>
