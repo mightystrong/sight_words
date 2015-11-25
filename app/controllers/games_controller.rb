@@ -22,7 +22,7 @@ class GamesController < ApplicationController
   def practice
     @list_name = params[:list].to_s.upcase
     @list = Kernel.const_get @list_name
-    @words = Word.difficulty_set(@list, 6, "lower")
+    @words = Word.difficulty_set(@list, 1, "higher")
     @word = @words.sample
   end
 
