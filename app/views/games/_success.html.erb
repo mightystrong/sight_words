@@ -1,14 +1,16 @@
-<div class="small-12 columns">
-  <h1 class="text-center">Great job Layla! You earned 10 points today!</h1>
-  <h1 class="text-center score">
-    Total Points<br>
-    <%= total_points %>
-  </h1>
-  <hr>
-  <h1 class=text-center>Points left to earn Pig Goes Pop</h1>
-  <h1 class="text-center score">
-    Total Points<br>
-    <%= total_points < 100 ? 100 - total_points : 0 %>
-  </h1>
-  <div class="text-center"><%= image_tag "pig_goes_pop.jpg" %></div>
+<div class="row">
+  <div class="small-12 columns">
+    <h1 class="text-center">Great job Layla! You earned 10 points today!</h1>
+    <h1 class="text-center score">
+      Total Points<br>
+      <%= total_points %>
+    </h1>
+    <hr>
+    <h1 class=text-center>Points left to earn your mermaid project.</h1>
+    <h1 class="text-center score">
+      Total Points<br>
+      <%= total_points < 1000 ? 1000 - total_points : 0 %>
+    </h1>
+    <div class="text-center"><%= image_tag "mermaid.jpg" %></div>
+  </div>
 </div>

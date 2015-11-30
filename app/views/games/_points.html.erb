@@ -3,7 +3,7 @@
     Today<br>
     <span class="point-number"><%= todays_points %></span><br>
     Left<br>
-    <span class="point-number"><%= 10 - todays_points %></span>
+    <span class="point-number"><%= todays_points <= 10 ? 10 - todays_points : 0 %></span>
   </h1>
   <h1 class="text-center score">
     Total<br>
